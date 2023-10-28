@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Add necessary CSS and other meta tags -->
+  <title>Cart</title>
+  
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .product-image {
+      width: 300px;
+      height: 250px;
+      border-radius:10px;
+    }
+    p{
+      font-size:25px;
+    }
+    #cart-items{
+    
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+     
+      }
+      button{
+        font-size:18px;
+        padding:8px;
+        justify-content: center;
+        align-items: center;
+
+      }
+      *{
+        margin:auto;
+        padding:4px;
+        box-sizing: border-box;
+      }
+      h1{
+        margin:20px 0px;
+        
+      }
+      p{
+        font-size:22px;
+      }
+
+      #final{
+        text-align:center;
+        font-size:28px;
+      }
+      input,button[type="text"]{
+        padding:8px;
+        font-size:15px;
+      }
+    
+  </style>
+</head>
+<body style="color:white;background-color: rgb(24, 24, 24);">
+  <section class="nav-bar" style="background-color:black">
+    <div class="logo" style="color: #f2f2f2;">E-commerce Online Shop</div>
+    <ul class="menu">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="pay.html">Pay here</a></li>
+        <li class="login"><button  onclick = "window.location.href='mycart.html'">View Cart</button> </li>                                                                                   
+    </ul>
+  
+</section>
+  <h1 align="center">MY CART</h1> 
+  <p id="final">Amount: <input type="text" placeholder="" id="total" size="20" disabled/>&emsp;<a href="pay.html"><button>Pay Now</button></a></p>
+ 
+  <ul id="cart-items"></ul>
+
+
+
+  <script>
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    var k=0;
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      renderCart();
+    }
+
+    function renderCart() {
+      var cartItemsList = document.getElementById('cart-items');
+      while (cartItemsList.firstChild) {
+        cartItemsList.removeChild(cartItemsList.firstChild);
+      }
+      cartItems.forEach(function(item, index) {
+        var listItem = document.createElement('li');
+    
+        var productImage = document.createElement('img');
+        productImage.src = item.image;
+        productImage.className = 'product-image';
+        listItem.appendChild(productImage);
+    
+        var productInfo = document.createElement('p');
+        productInfo.textContent =  item.name ;
+        listItem.appendChild(productInfo);
+        var productInfo = document.createElement('p');
+        productInfo.textContent =  'Price: '+item.price ;
+        listItem.appendChild(productInfo);
+        var productInfo=document.createElement('br');
+        listItem.appendChild(productInfo);
+    
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove Item';
+        removeButton.addEventListener('click', function() {
+          removeItem(index);
+        });
+        listItem.appendChild(removeButton);
+    
+        cartItemsList.appendChild(listItem);
+
+        k=k+item.price;
+      });
+    }
+    
+
+    renderCart();
+    document.getElementById('total').value=k;
+  </script>
+</body>
+</html>

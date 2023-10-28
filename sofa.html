@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sofa</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body style="color:white;background-color: rgb(24, 24, 24);">
+  <section class="nav-bar" style="background-color:black">
+    <div class="logo" style="color: #f2f2f2;">E-commerce Online Shop</div>
+    <ul class="menu">
+        <li><a href="index.html"><pre>      </pre>Back</a></li>
+            <li><a href="products.html"><pre>      </pre>Products</a></li>
+            <li><a href="pay.html"><pre>      </pre>Pay here</a></li>
+        <li class="login"><button  onclick = "window.location.href='mycart.html'">View Cart</button> </li>                                                                                   
+    </ul>
+</section>
+<section style="color:white;background-color: rgb(24, 24, 24); height:650px">
+    <div class="places-text" >
+    <div class="card_main">
+    <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://shop.gkwretail.com/cdn/shop/products/Designer-Sofa-Set-in-Fabric-L-Shape_2.png?v=1651899140&width=533"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b>Price: 15000</b></h2>
+          <br><p class="location" ><button onclick="addToCart('Sofa1',15000,'Hyderabad','https://shop.gkwretail.com/cdn/shop/products/Designer-Sofa-Set-in-Fabric-L-Shape_2.png?v=1651899140&width=533')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJu5Pnrka_1xJRUur2brZbZac4MESoWIR_1w&usqp=CAU"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b> Price: 14000 </b></h2>
+          <br><p class="location" ><button onclick="addToCart('Sofa2',14000,'Mumbai','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJu5Pnrka_1xJRUur2brZbZac4MESoWIR_1w&usqp=CAU')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://desket.in/cdn/shop/products/DSK09C_6_fb886f5f-16b3-40ed-b5e0-664e8faccc22.jpg?v=1645073127"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b>Price: 18000</b></h2>
+          <br><p class="location" ><button onclick="addToCart('Sofa3',18000,'Chennai','https://desket.in/cdn/shop/products/DSK09C_6_fb886f5f-16b3-40ed-b5e0-664e8faccc22.jpg?v=1645073127')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>     
+    </div>
+  </section>
+</body>
+<script>
+  function addToCart(productName, price, acc, image) {
+    console.log(productName, price, acc, image);
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    var isItemInCart = cartItems.some(function(item) {
+      return item.name === productName;
+    });
+
+    if (isItemInCart) {
+      alert('This item is already in your cart!');
+      return;
+    }
+
+    cartItems.push({ name: productName, price: price, acc: acc, image: image });
+    
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    alert('Successfully added to Cart!');
+  }
+</script>
+</html>

@@ -1,0 +1,77 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cofee Table</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <section class="nav-bar" style="background-color:black">
+    <div class="logo" style="color: #f2f2f2;">E-commerce Online Shop</div>
+    <ul class="menu">
+      
+      <li><a href="index.html"><pre>      </pre>Back</a></li>
+      <li><a href="products.html"><pre>      </pre>Products</a></li>
+      <li><a href="pay.html"><pre>      </pre>Pay here</a></li>
+        <li class="login"><button  onclick = "window.location.href='mycart.html'">View Cart</button> </li>                                                                                   
+    </ul>
+</section>
+<section style="color:white;background-color: rgb(24, 24, 24); height:650px">
+    <div class="places-text">
+    <div class="card_main">
+    <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://kreatecube.com/usefull/Common/2/368.jpeg"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b>Price: 9000</b></h2>
+          <br><p class="location" ><button onclick="addToCart('Coffee Table1',9000,'Hyderabad','https://i1.adis.ws/i/fv/PRODLUK-CT----001_lukas_coffee-table__lifestyle?$medium$&w=579&fmt=webp')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://www.ulcdn.net/media/collection%20and%20listing/Top_5_Coffee_Tables_Design_For_Small_Spaces_2023.jpg?1683098691"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b> Price: 7500 </b></h2>
+          <br><p class="location" ><button onclick="addToCart('Cofee Table2',7500,'Mumbai','https://www.ulcdn.net/media/collection%20and%20listing/Top_5_Coffee_Tables_Design_For_Small_Spaces_2023.jpg?1683098691')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://images.squarespace-cdn.com/content/v1/55bebb51e4b036c52ebe8c45/1571699152702-TMCA2G6TRRPTW5C4KU3G/diy+crate+coffee+table?format=500w"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b>Price: 8000</b></h2>
+          <br><p class="location" ><button onclick="addToCart('Coffee Table3',8000,'Chennai','https://images.squarespace-cdn.com/content/v1/55bebb51e4b036c52ebe8c45/1571699152702-TMCA2G6TRRPTW5C4KU3G/diy+crate+coffee+table?format=500w')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>     
+    </div>
+  </section>
+</body>
+<script>
+  function addToCart(productName, price, acc, image) {
+    console.log(productName, price, acc, image);
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    var isItemInCart = cartItems.some(function(item) {
+      return item.name === productName;
+    });
+
+    if (isItemInCart) {
+      alert('This item is already in your cart!');
+      return;
+    }
+
+    cartItems.push({ name: productName, price: price, acc: acc, image: image });
+    
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    alert('Successfully added to Cart!');
+  }
+</script>
+</html>

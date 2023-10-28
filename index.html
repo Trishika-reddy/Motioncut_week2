@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main page</title>
+    <link rel="stylesheet" href="index.css">
+<style>
+
+* {box-sizing: border-box;
+}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;
+align-content: center;
+width: 100%;}
+img {vertical-align: middle;
+height:90vh;
+width:100%;
+}
+
+.slideshow-container {
+  width: 100%;
+  height:100%;
+  position: relative;
+  margin: 0;
+}
+
+.text {
+    background-color: rgb(88, 173, 194);
+  color: #ffffff;
+  font-size: 35px;
+  font-weight:bolder;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+    background-color: rgb(39, 203, 245);
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+    <section class="nav-bar" style="background-color:black">
+        <div class="logo" style="color: #f2f2f2;">E-commerce Online Shop</div>
+        <ul class="menu">
+            <li><a href="gallery.html"><pre>      </pre>Gallery</a></li>
+            <li><a href="products.html"><pre>      </pre>Products</a></li>
+            <li><a href="pay.html"><pre>      </pre>Pay here</a></li>
+            <li class="login"><button  onclick = "window.location.href='mycart.html'">View Cart</button> </li>                                                                                   
+        </ul>
+      
+    </section>
+    <br>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzO4LnXo0lM-ytT4u0kgDF8WDvUMY774CDBg&usqp=CAU" ></div>
+
+<div class="mySlides fade">
+  <img src="https://5.imimg.com/data5/SELLER/Default/2022/11/JL/EU/SP/163918844/multifunctional-smart-bed.webp">
+</div>
+
+<div class="mySlides fade">
+  <img src="https://floatingwalls.in/admin/garden-chair-table/UploadImages/FUR-03365_0.png">
+</div>
+
+</div>
+<div style="text-align:center" bgcolor="blue">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+
+<br>
+<footer style="background-color: black;">
+  <center>
+    <p style="color: Red;">Fimd Us</p>
+      <p style="color: White;">Hyderabad</p>
+      <br>
+      <p style="color: Red;">Call Us</p>
+      <p style="color: White;">987543210</p>
+      <br>
+    <p style="color: Red;">Mail US</p>
+      <p style="color: White;">Sadalathrishikareddy@gmail.com</p>
+  </center>
+</footer>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); 
+}
+</script>
+
+</body>
+</html> 

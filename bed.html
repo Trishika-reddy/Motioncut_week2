@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Beds</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <section class="nav-bar" style="background-color:black">
+    <div class="logo" style="color: #f2f2f2;">E-commerce Online Shop</div>
+    <ul class="menu">
+      <li><a href="index.html"><pre>      </pre>Back</a></li>
+      <li><a href="products.html"><pre>      </pre>Products</a></li>
+      <li><a href="pay.html"><pre>      </pre>Pay here</a></li>
+        <li class="login"><button  onclick = "window.location.href='mycart.html'">View Cart</button> </li>                                                                                   
+    </ul>
+</section>
+<section style="color:white;background-color: rgb(24, 24, 24); height:650px">
+    <div class="places-text">
+    <div class="card_main">
+    <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://m.media-amazon.com/images/I/61GnO+UavZL._AC_UF894,1000_QL80_DpWeblab_.jpg"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b>Price: 20000</b></h2>
+          <br><p class="location" ><button onclick="addToCart('Bed1',20000,'Hyderabad','https://m.media-amazon.com/images/I/61GnO+UavZL._AC_UF894,1000_QL80_DpWeblab_.jpg')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://images.squarespace-cdn.com/content/v1/56f2595e8a65e2db95a7d983/1534923607670-CSXVVPYKKIRD3VMG6Q0E/Types+Of+Beds+%289%29.jpg?format=1500w"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b> Price: 25000 </b></h2>
+          <br><p class="location" ><button onclick="addToCart('Bed2',25000,'Mumbai','https://images.squarespace-cdn.com/content/v1/56f2595e8a65e2db95a7d983/1534923607670-CSXVVPYKKIRD3VMG6Q0E/Types+Of+Beds+%289%29.jpg?format=1500w')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <div class = "square ddiv"><img style=width:170px;height:175px; src="https://kreatecube.com/usefull/Common/2/368.jpeg"></div>
+        </div>
+        <div class="card-content">
+          <br><br><br>
+          <h2><b>Price: 32000</b></h2>
+          <br><p class="location" ><button onclick="addToCart('Bed3',32000,'Chennai','https://kreatecube.com/usefull/Common/2/368.jpeg')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>   
+    </div>
+  </section>
+</body>
+<script>
+  function addToCart(productName, price, acc, image) {
+    console.log(productName, price, acc, image);
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    var isItemInCart = cartItems.some(function(item) {
+      return item.name === productName;
+    });
+
+    if (isItemInCart) {
+      alert('This item is already in your cart!');
+      return;
+    }
+
+    cartItems.push({ name: productName, price: price, acc: acc, image: image });
+    
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    alert('Successfully added to Cart!');
+  }
+</script>
+</html>

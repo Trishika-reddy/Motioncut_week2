@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        div {
+            perspective: 500px;	
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:40vh;
+        }
+        
+        .square {
+            width: 200px;
+            height: 200px;
+            background: grey;
+            transform: rotateY(45deg);
+            animation: rotateAnimation 1s linear infinite;
+        }
+        
+        @keyframes rotateAnimation {
+            from {transform: rotateY(45deg);}
+            to {transform: rotateY(225deg);}
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <section class="nav-bar" style="background-color:black">
+        <div class="logo" style="color: #f2f2f2;">E-commerce Online Shop</div>
+        <ul class="menu">
+            <li><a href="index.html"><pre>      </pre>Back</a></li>
+            <li><a href="products.html"><pre>      </pre>Products</a></li>
+            <li><a href="pay.html"><pre>      </pre>Pay here</a></li>
+            <li class="login"><button  onclick = "window.location.href='mycart.html'">View Cart</button> </li>                                                                                   
+        </ul>
+      
+    </section>
+    <br>
+    <center><h1 style="color:white">GALLERY</h1></center>
+    <div>
+      <div class = "square"><img style=width:170px;height:175px; src="https://shop.gkwretail.com/cdn/shop/products/Designer-Sofa-Set-in-Fabric-L-Shape_2.png?v=1651899140&width=533"></div>
+      <div class = "square"><img style=width:170px;height:175px; src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJu5Pnrka_1xJRUur2brZbZac4MESoWIR_1w&usqp=CAU"></div>
+      <div class = "square"><img style=width:170px;height:175px; src="https://desket.in/cdn/shop/products/DSK09C_6_fb886f5f-16b3-40ed-b5e0-664e8faccc22.jpg?v=1645073127"></div>
+      <div class = "square"><img style=width:170px;height:175px; src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c29mYXxlbnwwfHwwfHx8MA%3D%3D"></div>
+      <div class = "square"><img style=width:170px;height:175px; src="https://cdn.pixabay.com/photo/2017/08/02/01/01/living-room-2569325_1280.jpg"></div>
+  </div>
+  <div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://m.media-amazon.com/images/I/61GnO+UavZL._AC_UF894,1000_QL80_DpWeblab_.jpg"></div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://images.squarespace-cdn.com/content/v1/56f2595e8a65e2db95a7d983/1534923607670-CSXVVPYKKIRD3VMG6Q0E/Types+Of+Beds+%289%29.jpg?format=1500w"></div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://kreatecube.com/usefull/Common/2/368.jpeg"></div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://img.indiahandmade.com/catalog/product/cache/ffd74bda99b48b5fc1e6ab593972ce80/r/o/royal_paython_bed_1_.jpeg"></div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://www.syncronia.com/sites/default/files/styles/featured_image/public/old/youarch/uploads/prodotti/p31/big/let_big_bed.jpg"></div>
+</div>
+<div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://kreatecube.com/usefull/Common/2/368.jpeg"></div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://www.ulcdn.net/media/collection%20and%20listing/Top_5_Coffee_Tables_Design_For_Small_Spaces_2023.jpg?1683098691"></div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://images.squarespace-cdn.com/content/v1/55bebb51e4b036c52ebe8c45/1571699152702-TMCA2G6TRRPTW5C4KU3G/diy+crate+coffee+table?format=500w"></div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://5.imimg.com/data5/SELLER/Default/2022/3/VO/UW/CA/85586502/coffee-table-455.jpg"></div>
+    <div class = "square"><img style=width:170px;height:175px; src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6pXf78f36mbvnhoDGBeERZ624eqdLoKz5Ww&usqp=CAU"></div>
+</div>
+  </body>
+</html>
